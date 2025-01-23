@@ -7,7 +7,7 @@ set -e -u -o pipefail
 testml-run-file() {
   # set -x
   RUBYLIB=$TESTML_ROOT_LIB:$TESTML_LIB${RUBYLIB:+:$RUBYLIB} \
-    ${TESTML_LANG} -e "require 'testml/run/tap'; $TESTML_MODULE.run('$1')"
+    ${TESTML_LANG} -rtestml -e "$TESTML_MODULE.run('$1')"
 }
 
 [[ ${TESTML_SOURCED-} ]] ||
@@ -17,7 +17,7 @@ source-testml-config
 
 : "${TESTML_BIN:=testml-ruby-tap}"
 : "${TESTML_LANG:=ruby}"
-: "${TESTML_MODULE:=TestML::Run::TAP}"
-: "${TESTML_BRIDGE:=testml-bridge}"
+: "${TESTML_MODULE:=TestML}"
+: "${TESTML_BRIDGE:=testml/bridge}"
 
 [[ $0 != "${BASH_SOURCE[0]}" ]] || testml-run "$@"

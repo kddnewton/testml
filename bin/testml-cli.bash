@@ -137,8 +137,9 @@ TestML supports the following runners:
     node-tap        NodeJS w/ TAP
     perl-tap        Perl w/ TAP
     python-tap      Python (2 or 3) w/ TAP
-    python-tap      Python (2 or 3) w/ unittest
+    python-unit     Python (2 or 3) w/ unittest
     raku-tap        Raku w/ TAP
+    ruby-tap        Ruby w/ TAP
 
 Aliases:
     coffee          Alias for coffee-mocha
